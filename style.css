@@ -1,27 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
 .tilt {
-  height: 400px;
-  width: 2000px;
-  top: -200px;
-  right: 0px;
-  align-self: center;
+  height: 350px;
+  width: 120%;
   background-color: rgb(0, 157, 255);
-  transform: rotate(-10deg);
+  z-index: -1;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg); /* Center and tilt */
+  top: -100px;
+  overflow: hidden; /* Prevent internal overflow */
 }
 
 footer {
   background-color: rgb(0, 157, 255);
+  width: 3000px;
 }
 
 header {
   min-height: 100px;
   top: -200px;
-}
-
-main {
-  border-style: solid;
 }
 
 footer {
@@ -31,12 +37,11 @@ footer {
 .about-area {
   display: flex;
   justify-content: center;
-
+  position: relative;
   align-items: center;
   margin: 50px;
-  position: relative;
-  top: -0px;
   min-width: 600px;
+  font-size: 20px;
 }
 
 .profile-image {
@@ -44,8 +49,8 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0px -35px;
-  min-height: 400px;
-  min-width: 300px;
+  min-height: 500px;
+  min-width: 400px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -53,7 +58,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 400px;
+  max-width: 500px;
   background-color: white;
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -68,26 +73,25 @@ footer {
 }
 
 .work-area {
-  border-style: solid;
   margin: 50px;
   min-height: 900px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(500px, 1fr));
   justify-items: center;
   align-items: center;
-  min-width: 400px;
+  min-width: 600px;
+  gap: 60px;
 }
 
 main h1 {
-  margin: 50px;
   font-size: 40px;
 }
 
 .project {
   min-height: 400px;
   min-width: 200px;
-  max-width: 360px;
+  max-width: 400px;
   background-color: red;
   margin: 50px;
 }
@@ -154,9 +158,147 @@ main h1 {
 
 @media (max-width: 768px) {
   body {
+    max-width: 100wh;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
-  .about-area {
+  .tilt {
+    height: 250px;
+    width: 120%;
+    background-color: rgb(0, 157, 255);
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg); /* Center and tilt */
+    top: -30px;
+    overflow: hidden; /* Prevent internal overflow */
+  }
+
+  footer {
+    background-color: rgb(0, 157, 255);
+  }
+
+  footer {
+    width: 100%;
+  }
+  main {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .profile-image {
+    background-image: url("./assets/profile-large.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: 0px -35px;
+    min-width: 300px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .icons {
+    align-self: flex-end;
+  }
+
+  .icons img {
+    height: 20px;
+  }
+
+  .work-area {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
+
+  main h1 {
+    font-size: 40px;
+    align-self: center;
+  }
+
+  .project {
+    min-height: 300px;
+    min-width: 100px;
+    max-width: 300px;
+    background-color: red;
+  }
+
+  .screenshot-of-project {
+    height: 250px;
+    background-color: blue;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    text-align: center;
+    align-content: center;
+    font-size: 50px;
+    color: white;
+    font-weight: 200;
+  }
+
+  .project-details {
+    height: 150px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 20px;
+  }
+
+  .project-title-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    font-weight: bold;
+  }
+
+  .project-title-icons img {
+    height: 20px;
+  }
+
+  .project-title-icons p {
+    margin-right: auto;
+  }
+
+  #screenshot-1 {
+    background-color: rgb(150, 85, 85);
+  }
+
+  #screenshot-2 {
+    background-color: rgb(85, 89, 150);
+  }
+
+  #screenshot-3 {
+    background-color: rgb(100, 150, 85);
+  }
+
+  #screenshot-4 {
+    background-color: rgb(202, 65, 206);
+  }
+
+  #screenshot-5 {
+    background-color: rgb(210, 144, 51);
+  }
+
+  #screenshot-6 {
+    background-color: rgb(0, 157, 255);
   }
 }
